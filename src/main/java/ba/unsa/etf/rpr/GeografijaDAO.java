@@ -20,7 +20,7 @@ public class GeografijaDAO {
     }
     private GeografijaDAO() {
         try {
-            conn = DriverManager.getConnection("jdbc:sqlite:baza.db");
+            conn = DriverManager.getConnection("jdbc:sqlite:C:/Users/User/Desktop/baza.db");
         } catch (SQLException e) {
             e.printStackTrace();
         }
@@ -197,7 +197,7 @@ public class GeografijaDAO {
     }
 
     public ArrayList<Grad> gradovi() {
-        ArrayList<Grad> rezultat = new ArrayList();
+        ArrayList<Grad> rezultat = new ArrayList<>();
         try {
             ResultSet rs = dajGradoveUpit.executeQuery();
             while (rs.next()) {
@@ -212,7 +212,7 @@ public class GeografijaDAO {
     }
 
     public ArrayList<Drzava> drzave() {
-        ArrayList<Drzava> rezultat = new ArrayList();
+        ArrayList<Drzava> rezultat = new ArrayList<>();
         try {
             ResultSet rs = dajDrzaveUpit.executeQuery();
             while (rs.next()) {
@@ -226,7 +226,7 @@ public class GeografijaDAO {
     }
 
     public ArrayList<Znamenitost> znamenitosti(Grad grad) {
-        ArrayList<Znamenitost> rezultat = new ArrayList();
+        ArrayList<Znamenitost> rezultat = new ArrayList<>();
         try {
             dajZnamenitostiUpit.setInt(1, grad.getId());
             ResultSet rs = dajZnamenitostiUpit.executeQuery();
